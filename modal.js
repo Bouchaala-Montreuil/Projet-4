@@ -45,7 +45,7 @@ reserve.addEventListener('submit', function(e) {
 
   let compteur = 0;
   
-  if (first.value == "" || textFormat.test(first.value) == false) {  
+  if (first.value === "" || textFormat.test(first.value) === false) {  
     first.style.border = "1px red solid";
     error.textContent = "Veuillez remplir le champ avec min 2 lettres."
     myError.style.color = 'red';  
@@ -57,7 +57,7 @@ reserve.addEventListener('submit', function(e) {
     compteur++ 
   }    
   
-  if (last.value == "" || textFormat.test(last.value) == false) {  
+  if (last.value === "" || textFormat.test(last.value) === false) {  
     last.style.border = "2px red solid";    
     error1.textContent = "Veuillez remplir le champ avec min 2 lettres."
     myError1.style.color = 'red';
@@ -69,7 +69,7 @@ reserve.addEventListener('submit', function(e) {
     compteur++
   }
    
-  if (email.value == "" || emailFormat.test(email.value) == false) {              
+  if (email.value === "" || emailFormat.test(email.value) === false) {              
     email.style.border = "2px red solid";
     error2.textContent = "Veuillez entrer un email valide."
     myError2.style.color = 'red';
@@ -81,7 +81,7 @@ reserve.addEventListener('submit', function(e) {
     compteur++
     }
   
-  if (birthdate.value == "")  { 
+  if (birthdate.value === "")  { 
     birthdate.style.border = "2px red solid";           
     error3.textContent ="Veuillez entrer votre date de naissance."
     myError3.style.color = 'red'; 
@@ -93,7 +93,7 @@ reserve.addEventListener('submit', function(e) {
     compteur++ 
   }
      
-  if (quantity.value == "") {   
+  if (quantity.value === "") {   
     quantity.style.border = "2px red solid";    
     error4.textContent ="Vous devez saisir un nombre."
     myError4.style.color = 'red';    
