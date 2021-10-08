@@ -31,17 +31,20 @@ reserve.addEventListener('submit', function(e) {
   const birthdate = document.getElementById('birthdate');
   const quantity = document.getElementById('quantity');
   const conditions = document.getElementById('checkbox1');
+  const today = new Date().toISOString().split('T')[0];
+  
+  
   console.log(conditions.checked)
   const myError = document.getElementById('error');
   const myError1 = document.getElementById('error1');
   const myError2 = document.getElementById('error2');
   const myError3 = document.getElementById('error3');
   const myError4 = document.getElementById('error4');
- 
-   
-  let textFormat = /^[a-zA-Z\é\è\-\^\']{2,30}$/; 
-  let emailFormat = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;  
   
+ 
+  let textFormat = /^[a-zA-Z\é\è\-\^\']{2,30}$/; 
+  let emailFormat = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/; 
+
 
   let compteur = 0;
   
@@ -81,17 +84,21 @@ reserve.addEventListener('submit', function(e) {
     compteur++
     }
   
-  if (birthdate.value === "")  { 
+    birthdate.max = today;
+
+  if (birthdate.value === "") { 
     birthdate.style.border = "2px red solid";           
     error3.textContent ="Veuillez entrer votre date de naissance."
     myError3.style.color = 'red'; 
     myError3.style.fontSize = '0.5em';
+  
   } 
   else {
     myError3.innerHTML = "";
     birthdate.style.border = "2px green solid";
     compteur++ 
   }
+  
      
   if (quantity.value === "") {   
     quantity.style.border = "2px red solid";    
